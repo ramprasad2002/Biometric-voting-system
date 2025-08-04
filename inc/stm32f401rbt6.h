@@ -1,0 +1,273 @@
+/*
+
+FileName: stm32f401rbt6.h 
+Description: Contains board specific details (Base addresses and Physical addresses of devices)
+
+PHYSICAL ADDRESS = BASE ADDRESS OF DEVICE + OFFSET ADDRESS OF REGISTER
+*/
+
+//***************************************GPIO MACROS*****************************************
+#define a 0
+#define b 1
+#define c 2
+#define A 0
+#define B 1
+#define C 2
+
+#define IP 0
+#define OP 1
+#define AF 2
+#define ip 0
+#define op 1
+#define af 2
+
+#define PD 0
+#define PU 1
+#define pu 1
+#define pd 0
+
+//****************************************BASE ADDRESSES*************************************
+
+//BASE ADDRESSES OF BUSES
+#define APB1_BASEADDR 0x40000000
+#define APB2_BASEADDR 0x40010000
+#define AHB1_BASEADDR 0x40020000
+#define AHB2_BASEADDR 0x50000000
+
+
+//BASE ADDRESSES OF RCC
+#define RCC_BASEADDR 0x40023800
+
+
+//BASE ADDRESSES OF GPIOS
+#define GPIOA_BASEADDR AHB1_BASEADDR
+#define GPIOB_BASEADDR 0x40020400
+#define GPIOC_BASEADDR 0x40020800
+#define GPIOD_BASEADDR 0x40020c00
+#define GPIOE_BASEADDR 0x40021000
+#define GPIOH_BASEADDR 0x40021c00
+
+
+//BASE ADDRESSES OF ADC
+#define ADC1_BASEADDR  0x40012000 
+
+
+//BASE ADDRESSES OF USART
+#define USART1_BASEADDR 0x40011000
+#define USART2_BASEADDR 0x40004400
+#define USART6_BASEADDR 0x40011400
+
+
+//BASE ADDRESSES OF I2C
+#define I2C1_BASEADDR 0x40005400
+#define I2C2_BASEADDR 0x40005800
+#define I2C3_BASEADDR 0x40005c00
+
+
+//BASE ADDRESSES OF SPI
+#define SPI1_BASEADDR 0x40013000
+#define SPI2_BASEADDR 0x40003800
+#define SPI3_BASEADDR 0x40003C00
+#define SPI4_BASEADDR 0x40013400
+
+//BASE ADDRESS OF SYSCONF
+#define SYSCFG_BASEADDR  0x40013800
+
+//BASE ADDRESS OF EXTI
+#define EXTI_BASEADDR  0x40013C00
+
+//BASE ADDRESS OF NVIC
+#define NVIC_BASEADDR 0xE000E100
+
+//BASE ADDRESS OF SYS_TICK
+#define SYS_TICK_BASEADDR 0xE000E010
+
+//BASE ADDRESS OF ADC
+#define ADC_BASEADDR 0x40012000
+
+//BASE ADDRESS OF RTC
+#define RTC_BASEADDR 0x40002800
+
+//***************************************PHYSICAL ADDRESSES*************************************
+
+//PHYSICAL ADDRESSES OF RCC
+#define RCC_AHB1ENR  *(int*)(RCC_BASEADDR + 0X30)			//OFFSET IS 0X30
+#define RCC_APB1ENR  *(int*)(RCC_BASEADDR + 0X40)			//OFFSET IS 0X40
+#define RCC_APB2ENR  *(int*)(RCC_BASEADDR + 0X44)			//OFFSET IS 0X44
+#define RCC_AHB2ENR  *(int*)(RCC_BASEADDR + 0X34)			//OFFSET IS 0X34
+
+
+//PHYSICAL ADDRESSES OF GPIOA
+#define GPIOA_MODER   *(int*)(GPIOA_BASEADDR + 0x00)		//OFFSET IS 0X00
+#define GPIOA_OTYPER  *(int*)(GPIOA_BASEADDR + 0x04)		//OFFSET IS 0X04
+#define GPIOA_OSPEEDR *(int*)(GPIOA_BASEADDR + 0x08)		//OFFSET IS 0X08
+#define GPIOA_PUPDR   *(int*)(GPIOA_BASEADDR + 0x0c)		//OFFSET IS 0X0C
+#define GPIOA_IDR     *(int*)(GPIOA_BASEADDR + 0X10)		//OFFSET IS 0X10
+#define GPIOA_ODR     *(int*)(GPIOA_BASEADDR + 0x14)		//OFFSET IS 0X14
+#define GPIOA_BSRR    *(int*)(GPIOA_BASEADDR + 0x18)		//OFFSET IS 0X18
+#define GPIOA_LCKR    *(int*)(GPIOA_BASEADDR + 0x1C)		//OFFSET IS 0X1C
+#define GPIOA_AFRL    *(int*)(GPIOA_BASEADDR + 0x20)		//OFFSET IS 0X20
+#define GPIOA_AFRH    *(int*)(GPIOA_BASEADDR + 0x24)		//OFFSET IS 0X24
+	
+
+//PHYSICAL ADDRESSES OF GPIOB
+#define GPIOB_MODER   *(int*)(GPIOB_BASEADDR + 0x00)		//OFFSET IS 0X00
+#define GPIOB_OTYPER  *(int*)(GPIOB_BASEADDR + 0x04)		//OFFSET IS 0X04
+#define GPIOB_OSPEEDR *(int*)(GPIOB_BASEADDR + 0x08)		//OFFSET IS 0X08
+#define GPIOB_PUPDR   *(int*)(GPIOB_BASEADDR + 0x0c)		//OFFSET IS 0X0C
+#define GPIOB_IDR     *(int*)(GPIOB_BASEADDR + 0X10)		//OFFSET IS 0X10
+#define GPIOB_ODR     *(int*)(GPIOB_BASEADDR + 0x14)		//OFFSET IS 0X14
+#define GPIOB_BSRR    *(int*)(GPIOB_BASEADDR + 0x18)		//OFFSET IS 0X18
+#define GPIOB_LCKR    *(int*)(GPIOB_BASEADDR + 0x1C)		//OFFSET IS 0X1C
+#define GPIOB_AFRL    *(int*)(GPIOB_BASEADDR + 0x20)		//OFFSET IS 0X20
+#define GPIOB_AFRH    *(int*)(GPIOB_BASEADDR + 0x24)		//OFFSET IS 0X24
+
+
+//PHYSICAL ADDRESSES OF GPIOC
+#define GPIOC_MODER   *(int*)(GPIOC_BASEADDR + 0x00)		//OFFSET IS 0X00
+#define GPIOC_OTYPER  *(int*)(GPIOC_BASEADDR + 0x04)		//OFFSET IS 0X04
+#define GPIOC_OSPEEDR *(int*)(GPIOC_BASEADDR + 0x08)		//OFFSET IS 0X08
+#define GPIOC_PUPDR   *(int*)(GPIOC_BASEADDR + 0x0c)		//OFFSET IS 0X0C
+#define GPIOC_IDR     *(int*)(GPIOC_BASEADDR + 0X10)		//OFFSET IS 0X10
+#define GPIOC_ODR     *(int*)(GPIOC_BASEADDR + 0x14)		//OFFSET IS 0X14
+#define GPIOC_BSRR    *(int*)(GPIOC_BASEADDR + 0x18)		//OFFSET IS 0X18
+#define GPIOC_LCKR    *(int*)(GPIOC_BASEADDR + 0x1C)		//OFFSET IS 0X1C
+#define GPIOC_AFRL    *(int*)(GPIOC_BASEADDR + 0x20)		//OFFSET IS 0X20
+#define GPIOC_AFRH    *(int*)(GPIOC_BASEADDR + 0x24)		//OFFSET IS 0X24
+
+
+//PHYSICAL ADDRESSES OF SYSCFG
+#define SYSCFG_EXTICR1 *(int*)(SYSCFG_BASEADDR + 0x08)      //OFFSET IS 0X08
+#define SYSCFG_EXTICR2 *(int*)(SYSCFG_BASEADDR + 0x0c)      //OFFSET IS 0X0C
+#define SYSCFG_EXTICR3 *(int*)(SYSCFG_BASEADDR + 0x10)      //OFFSET IS 0X10
+
+
+//PHYSICAL ADDRESSES OF EXTI
+#define EXTI_IMR      *(int*)(EXTI_BASEADDR + 0x00)         //OFFSET IS 0X00
+#define EXTI_FTSR     *(int*)(EXTI_BASEADDR + 0x0c)         //OFFSET IS 0X0C
+#define EXTI_PR 	  *(int*)(EXTI_BASEADDR + 0x14)			//OFFSET IS 0X14
+
+
+//PHYSICAL ADDRESSES OF NVIC_ISERX
+#define NVIC_ISER0     *(int*)(NVIC_BASEADDR + 0x00)       //for ISER0  0x04 * 0
+#define NVIC_ISER1     *(int*)(NVIC_BASEADDR + 0x04)       //for ISER1  0x04 * 1
+#define NVIC_ISER2     *(int*)(NVIC_BASEADDR + 0x08)       //for ISER2  0x04 * 2
+#define NVIC_ISER3     *(int*)(NVIC_BASEADDR + 0x0c)       //for ISER3  0x04 * 3
+#define NVIC_ISER4     *(int*)(NVIC_BASEADDR + 0x10)       //for ISER4  0x04 * 4
+#define NVIC_ISER5     *(int*)(NVIC_BASEADDR + 0x14)       //for ISER5  0x04 * 5
+#define NVIC_ISER6     *(int*)(NVIC_BASEADDR + 0x18)       //for ISER6  0x04 * 6
+#define NVIC_ISER7     *(int*)(NVIC_BASEADDR + 0x1c)       //for ISER7  0x04 * 7
+
+
+//PHYSICAL ADDRESSES OF SYSTICK
+#define STK_CTRL 	*(int*)(SYS_TICK_BASEADDR + 0x00) //OFFSET IS  0X00
+#define STK_LOAD 	*(int*)(SYS_TICK_BASEADDR + 0x04) //OFFSET IS  0X04
+#define STK_VAL     *(int*)(SYS_TICK_BASEADDR + 0x08) //OFFSET IS  0X08
+#define STK_CALIB   *(int*)(SYS_TICK_BASEADDR + 0x0C) //OFFSET IS  0X0C
+
+//PHYSICAL ADDRESSES OF ADC
+#define ADC_SR    *(int*)(ADC_BASEADDR + 0x00)
+#define ADC_CR1   *(int*)(ADC_BASEADDR + 0x04)
+#define ADC_CR2   *(int*)(ADC_BASEADDR + 0x08)
+#define ADC_SMPR1 *(int*)(ADC_BASEADDR + 0x0C)
+#define ADC_SMPR2 *(int*)(ADC_BASEADDR + 0x10)
+#define ADC_SQR1  *(int*)(ADC_BASEADDR + 0x2C)
+#define ADC_SQR2  *(int*)(ADC_BASEADDR + 0x30)
+#define ADC_SQR3  *(int*)(ADC_BASEADDR + 0x34)
+#define ADC_DR    *(int*)(ADC_BASEADDR + 0x4C)
+
+//PHYSICAL ADDRESSES OF USART2
+#define USART2_SR       *(int*)(USART2_BASEADDR + 0X00)
+#define USART2_DR       *(int*)(USART2_BASEADDR + 0X04)
+#define USART2_BRR      *(int*)(USART2_BASEADDR + 0X08)
+#define USART2_CR1      *(int*)(USART2_BASEADDR + 0X0C)
+#define USART2_CR2      *(int*)(USART2_BASEADDR + 0X10)
+#define USART2_CR3      *(int*)(USART2_BASEADDR + 0X14)
+#define USART2_GTPR     *(int*)(USART2_BASEADDR + 0X18)
+
+
+//PHYSICAL ADDRESSES OF USART1
+#define USART1_SR       *(int*)(USART1_BASEADDR + 0X00)
+#define USART1_DR       *(int*)(USART1_BASEADDR + 0X04)
+#define USART1_BRR      *(int*)(USART1_BASEADDR + 0X08)
+#define USART1_CR1      *(int*)(USART1_BASEADDR + 0X0C)
+#define USART1_CR2      *(int*)(USART1_BASEADDR + 0X10)
+#define USART1_CR3      *(int*)(USART1_BASEADDR + 0X14)
+#define USART1_GTPR     *(int*)(USART1_BASEADDR + 0X18)
+
+//PHYSICAL ADDRESSES OF USART6
+#define USART6_SR       *(int*)(USART6_BASEADDR + 0X00)
+#define USART6_DR       *(int*)(USART6_BASEADDR + 0X04)
+#define USART6_BRR      *(int*)(USART6_BASEADDR + 0X08)
+#define USART6_CR1      *(int*)(USART6_BASEADDR + 0X0C)
+#define USART6_CR2      *(int*)(USART6_BASEADDR + 0X10)
+#define USART6_CR3      *(int*)(USART6_BASEADDR + 0X14)
+#define USART6_GTPR     *(int*)(USART6_BASEADDR + 0X18)
+
+
+//PHYSICAL ADDRESSES OF SPI1
+#define SPI1_CR1    *(int*)(SPI1_BASEADDR + 0X00)
+#define SPI1_CR2    *(int*)(SPI1_BASEADDR + 0X04)
+#define SPI1_SR     *(int*)(SPI1_BASEADDR + 0X08)
+#define SPI1_DR     *(int*)(SPI1_BASEADDR + 0X0C)
+#define SPI1_CRCPR  *(int*)(SPI1_BASEADDR + 0X10)
+#define SPI1_RXCRCR *(int*)(SPI1_BASEADDR + 0X14)
+#define SPI1_TXCRCR *(int*)(SPI1_BASEADDR + 0X18)
+
+
+
+//PHYSICAL ADDRESSES OF SPI2
+#define SPI2_CR1    *(int*)(SPI2_BASEADDR + 0X00)
+#define SPI2_CR2    *(int*)(SPI2_BASEADDR + 0X04)
+#define SPI2_SR     *(int*)(SPI2_BASEADDR + 0X08)
+#define SPI2_DR     *(int*)(SPI2_BASEADDR + 0X0C)
+#define SPI2_CRCPR  *(int*)(SPI2_BASEADDR + 0X10)
+#define SPI2_RXCRCR *(int*)(SPI2_BASEADDR + 0X14)
+#define SPI2_TXCRCR *(int*)(SPI2_BASEADDR + 0X18)
+
+
+//PHYSICAL ADDRESSES OF SPI3
+#define SPI3_CR1    *(int*)(SPI3_BASEADDR + 0X00)
+#define SPI3_CR2    *(int*)(SPI3_BASEADDR + 0X04)
+#define SPI3_SR     *(int*)(SPI3_BASEADDR + 0X08)
+#define SPI3_DR     *(int*)(SPI3_BASEADDR + 0X0C)
+#define SPI3_CRCPR  *(int*)(SPI3_BASEADDR + 0X10)
+#define SPI3_RXCRCR *(int*)(SPI3_BASEADDR + 0X14)
+#define SPI3_TXCRCR *(int*)(SPI3_BASEADDR + 0X18)
+
+//PHYSICAL ADDRESSES OF I2C1
+#define I2C1_CR1    *(int*)(I2C1_BASEADDR + 0X00)
+#define I2C1_CR2    *(int*)(I2C1_BASEADDR + 0X04)
+#define I2C1_OAR1   *(int*)(I2C1_BASEADDR + 0X08)
+#define I2C1_OAR2   *(int*)(I2C1_BASEADDR + 0X0C)
+#define I2C1_DR     *(int*)(I2C1_BASEADDR + 0X10)
+#define I2C1_SR1    *(int*)(I2C1_BASEADDR + 0X14)
+#define I2C1_SR2    *(int*)(I2C1_BASEADDR + 0X18)
+#define I2C1_CCR    *(int*)(I2C1_BASEADDR + 0X1c)
+#define I2C1_TRISE  *(int*)(I2C1_BASEADDR + 0X20)
+#define I2C1_FLTR   *(int*)(I2C1_BASEADDR + 0X24)   
+
+
+//PHYSICAL ADDRESSES OF I2C2
+#define I2C2_CR1    *(int*)(I2C2_BASEADDR + 0X00)
+#define I2C2_CR2    *(int*)(I2C2_BASEADDR + 0X04)
+#define I2C2_OAR1   *(int*)(I2C2_BASEADDR + 0X08)
+#define I2C2_OAR2   *(int*)(I2C2_BASEADDR + 0X0C)
+#define I2C2_DR     *(int*)(I2C2_BASEADDR + 0X10)
+#define I2C2_SR1    *(int*)(I2C2_BASEADDR + 0X14)
+#define I2C2_SR2    *(int*)(I2C2_BASEADDR + 0X18)
+#define I2C2_CCR    *(int*)(I2C2_BASEADDR + 0X1c)
+#define I2C2_TRISE  *(int*)(I2C2_BASEADDR + 0X20)
+#define I2C2_FLTR   *(int*)(I2C2_BASEADDR + 0X24)
+
+//PHYSICAL ADDRESSES OF I2C3
+#define I2C3_CR1    *(int*)(I2C3_BASEADDR + 0X00)
+#define I2C3_CR2    *(int*)(I2C3_BASEADDR + 0X04)
+#define I2C3_OAR1   *(int*)(I2C3_BASEADDR + 0X08)
+#define I2C3_OAR2   *(int*)(I2C3_BASEADDR + 0X0C)
+#define I2C3_DR     *(int*)(I2C3_BASEADDR + 0X10)
+#define I2C3_SR1    *(int*)(I2C3_BASEADDR + 0X14)
+#define I2C3_SR2    *(int*)(I2C3_BASEADDR + 0X18)    
+#define I2C3_CCR    *(int*)(I2C3_BASEADDR + 0X1c)
+#define I2C3_TRISE  *(int*)(I2C3_BASEADDR + 0X20)
+#define I2C3_FLTR   *(int*)(I2C3_BASEADDR + 0X24)
