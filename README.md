@@ -1,6 +1,7 @@
 A microcontroller-based biometric voting system that uses fingerprint verification to authenticate voters and securely record their votes, reducing fraud and ensuring election integrity.
 
 🔐 Features
+    
     Biometric Authentication: Validates voters using fingerprint recognition to prevent impersonation and duplicate voting.
     
     Digital Voting Interface: Simple user interface for casting votes after successful authentication.
@@ -12,6 +13,7 @@ A microcontroller-based biometric voting system that uses fingerprint verificati
     Audit Trail: Logs all events for verification and transparency.
 
 🧰 Tech Stack
+    
     Microcontroller: STM32F401RBT6 
     
     Biometric Module: GT521F32 Fingerprint Sensor
@@ -23,6 +25,7 @@ A microcontroller-based biometric voting system that uses fingerprint verificati
     Storage: AT24C02 EEPROM 
 
 📌 How It Works
+    
     Voter places their finger on the fingerprint sensor.
     
     System compares fingerprint with the registered database.
@@ -34,6 +37,7 @@ A microcontroller-based biometric voting system that uses fingerprint verificati
     System logs the transaction for future auditing.
 
 🚀 Future Enhancements
+   
     Add facial recognition as a second layer of authentication.
     
     Integrate with blockchain for immutable vote storage.
